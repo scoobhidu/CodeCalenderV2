@@ -1,0 +1,36 @@
+name: codecalenderv2
+description: A new Flutter project.
+version: 1.0.0+1
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+dependencies: 
+  flutter: 
+    sdk: flutter
+  get: ^4.6.5
+  cupertino_icons: ^1.0.5
+  connectivity_plus: ^2.3.6
+  shared_preferences: ^2.0.15
+  cached_network_image: ^3.2.1
+  flutter_svg: ^0.22.0
+  url_launcher: 6.0.20
+  card_swiper: ^2.0.4
+
+dev_dependencies: 
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts: 
+    - family: Sora
+      fonts: 
+        - asset: assets/fonts/soraregular400.ttf
+          weight: 400
+        - asset: assets/fonts/SoraSemiBold.ttf
+          weight: 400
+        - asset: assets/fonts/SoraRegular.ttf
+          weight: 500
+        - asset: assets/fonts/sorabold700.ttf
+          weight: 700
