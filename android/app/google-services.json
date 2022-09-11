@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "180471297147",
+    "project_id": "codecalenderv2",
+    "storage_bucket": "codecalenderv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180471297147:android:3510bd4e1b321e225edede",
+        "android_client_info": {
+          "package_name": "com.codecalenderv.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180471297147-gchooefq2sab58f51r1hq6o0ndtjjsf3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codecalenderv.app",
+            "certificate_hash": "a1f1e875dc4bde612b9d77823c438d6a97bcf43e"
+          }
+        },
+        {
+          "client_id": "180471297147-1noel3b2tblsfuo9653i0rfi9bmfmqfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs8NWEFpZnPGfUeW-covxSMrtyahlRz3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180471297147-1noel3b2tblsfuo9653i0rfi9bmfmqfg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "180471297147-5dih3h2jsv1g6nijujom7488c0oef2d3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "codecalenderv2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
