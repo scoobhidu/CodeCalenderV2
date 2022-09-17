@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:card_swiper/card_swiper.dart';
+import 'package:codecalenderv2/data/models/GoogleSigninObjectModel/googleSignInObjectModel.dart';
 import 'package:codecalenderv2/presentation/onboarding_Screen/widgets/carousel_item_widget.dart';
 import 'package:codecalenderv2/widgets/custom_text_form_field.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import 'controller/onboardingForm_controller.dart';
 import 'package:codecalenderv2/core/app_export.dart';
@@ -310,7 +312,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                               width: size.width,
                               child: ElevatedButton(
                                 focusNode: FocusNode(),
-                                onPressed: onTapBtnLoginGoogle,
+                                onPressed: controller.onTapBtnLoginGoogle,
                                 style: ButtonStyle(
                                   shape: MaterialStateProperty.all(
                                       RoundedRectangleBorder(
@@ -373,9 +375,8 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
       )
     );
   }
-  onTapBtnLoginGoogle(){
 
-  }
+
   onTapBtnLoginMail(){
 
   }

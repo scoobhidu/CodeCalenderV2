@@ -62,7 +62,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       children: [
                                         GestureDetector(
                                             onTap: () {
-                                              onTapDashboardforMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -110,7 +109,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapTransactionforMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -158,7 +156,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapAccountsforMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -206,7 +203,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapInvestmentsforMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -254,7 +250,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapCreditCardsforMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -302,7 +297,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapLoansforMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -350,7 +344,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapServicesforMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -398,7 +391,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapSettingpage1forMobile();
                                             },
                                             child: Container(
                                                 width: size.width,
@@ -446,37 +438,5 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ])))
                                       ])))))
                 ]))));
-  }
-
-  onTapDashboardforMobile() {
-    Get.toNamed(AppRoutes.dashboardForMobileScreen);
-  }
-
-  onTapTransactionforMobile() {
-    Get.toNamed(AppRoutes.transactionForMobileScreen);
-  }
-
-  onTapAccountsforMobile() {
-    Get.toNamed(AppRoutes.accountsForMobileScreen);
-  }
-
-  onTapInvestmentsforMobile() {
-    Get.toNamed(AppRoutes.investmentsForMobileScreen);
-  }
-
-  onTapCreditCardsforMobile() {
-    Get.toNamed(AppRoutes.creditCardsForMobileScreen);
-  }
-
-  onTapLoansforMobile() {
-    Get.toNamed(AppRoutes.loansForMobileScreen);
-  }
-
-  onTapServicesforMobile() {
-    Get.toNamed(AppRoutes.servicesForMobileScreen);
-  }
-
-  onTapSettingpage1forMobile() {
-    Get.toNamed(AppRoutes.settingPage1ForMobile1Screen);
   }
 }

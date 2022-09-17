@@ -1,11 +1,40 @@
+import 'package:codecalenderv2/data/models/GoogleSigninObjectModel/googleSignInObjectModel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import 'core/app_export.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  print("Initializing Firebase");
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+    apiKey: 'AIzaSyBs8NWEFpZnPGfUeW-covxSMrtyahlRz3c',
+    appId: 'com.codecalenderv.app',
+    messagingSenderId: '180471297147',
+    projectId: 'codecalenderv2',
+  ));
+  print("Initialized Firebase");
+
+  FirebaseAuth.instance
+      .authStateChanges()
+      .listen((User? user) {
+    if (user == null) {
+      print('User is currently signed out!');
+    } else {
+      print('User is signed in!');
+      // navigate directly to competition Page or the loader screen to fetch user details and other data
+    }
+  });
+
+  GoogleSignIn googleSignIn = GoogleSignIn();
+
+  Get.put(GoogleSignInObjectModel(object: googleSignIn), tag: 'googleSignInObject');
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
