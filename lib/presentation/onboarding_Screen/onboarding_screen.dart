@@ -59,10 +59,10 @@ class OnboardingScreen extends GetWidget<OnboardingController> {
                   Expanded(
                     flex: 2,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: Center(
                         child: Container(
-                          height: 50,
+                          height: size.height * 0.07,
                           width: size.width,
                           child: ElevatedButton(
                             focusNode: FocusNode(),
@@ -71,7 +71,7 @@ class OnboardingScreen extends GetWidget<OnboardingController> {
                               shape: MaterialStateProperty.all(RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25),
                               )),
-                              textStyle: MaterialStateProperty.all(TextStyle(fontFamily: 'Sora', fontSize: 15, fontWeight: FontWeight.w700)),
+                              textStyle: MaterialStateProperty.all(TextStyle(fontFamily: 'Sora', fontSize: 16, fontWeight: FontWeight.w700)),
                               backgroundColor: MaterialStateProperty.all(ColorConstant.black500),
                               shadowColor: MaterialStateProperty.all(ColorConstant.black100),
                               elevation: MaterialStateProperty.all(25),

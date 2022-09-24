@@ -1,39 +1,50 @@
 import 'dart:convert';
 
 import 'package:codecalenderv2/data/models/AllContestsModel/AllContestsModel.dart';
+import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/contestButtons.dart';
 
 import '../../../data/apiClient/api_client.dart';
-import '../../../data/models/atcoderContestsModel/atcoderContestsModel.dart';
-import '../../../data/models/codechefContestsModel/codechefContestsModel.dart';
-import '../../../data/models/codeforcesContestsModel/codeforcesContestsModel.dart';
-import '../../../data/models/hackerearthContestsModel/hackerearthContestsModel.dart';
-import '../../../data/models/hackerrankContestsModel/hackerrankContestModel.dart';
-import '../../../data/models/kickstartContestsModel/kickstartContestsModel.dart';
-import '../../../data/models/leetcodeContestsModel/leetcodeContestsModel.dart';
+import '../../../data/models/ContestsModel/ContestsModel.dart';
 import '/core/app_export.dart';
 
 class ContestLoadingController extends GetxController {
   @override
 
-  List contestsIn24Hrs = [];
-  List contestsThisWeek = [];
-  List contestsThisMonth = [];
-  List contestsThisYear = [];
-  List liveContests = [];
+  List<Contests> contestsIn24Hrs = [];
+  List<Contests> contestsThisWeek = [];
+  List<Contests> contestsThisMonth = [];
+  List<Contests> contestsThisYear = [];
+  List<Contests> liveContests = [];
 
-  List allContests = [];
+  List<Contests> allContests = [];
 
 
 
   void onInit() async {
     super.onInit();
-    List<CodechefContests> cc = await fetchCodechefContests();
-    List<CodeforcesContests> cf = await fetchCodeforcesContests();
-    List<LeetCodeContests> lc = await fetchLeetcodeContests();
-    List<AtcoderContests> ac = await fetchAtcoderContests();
-    List<KickStartContests> kc = await fetchKickstartContests();
-    List<HackerrankContests> hr = await fetchHackerrankContests();
-    List<HackerearthContests> he = await fetchHackerearthContests();
+    List<Contests> cc = await fetchCodechefContests();
+    List<Contests> cf = await fetchCodeforcesContests();
+    List<Contests> lc = await fetchLeetcodeContests();
+    List<Contests> ac = await fetchAtcoderContests();
+    List<Contests> ks = await fetchKickstartContests();
+    List<Contests> hr = await fetchHackerrankContests();
+    List<Contests> he = await fetchHackerearthContests();
+
+    List<ContestButton> ccWidgets = [];
+    List<ContestButton> cfWidgets = [];
+    List<ContestButton> lcWidgets = [];
+    List<ContestButton> acWidgets = [];
+    List<ContestButton> ksWidgets = [];
+    List<ContestButton> hrWidgets = [];
+    List<ContestButton> heWidgets = [];
+
+    List<ContestButton> contestsIn24HrsWidgets = [];
+    List<ContestButton> contestsThisWeekWidgets = [];
+    List<ContestButton> contestsThisMonthWidgets = [];
+    List<ContestButton> contestsThisYearWidgets = [];
+    List<ContestButton> liveContestsWidgets = [];
+
+    List<ContestButton> allContestsWidgets = [];
 
     // ! Sorting the lists once they are ready according to increasing date order
 
@@ -41,7 +52,7 @@ class ContestLoadingController extends GetxController {
     cf.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
     lc.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
     ac.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
-    kc.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
+    ks.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
     hr.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
     he.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
     allContests.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
@@ -51,20 +62,61 @@ class ContestLoadingController extends GetxController {
     contestsThisMonth.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
     contestsThisYear.sort((a, b) => DateTime.parse(a.startTime!).compareTo(DateTime.parse(b.startTime!)));
 
+    for(var d in cc){
+      ccWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in cf){
+      cfWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in lc){
+      lcWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in ac){
+      acWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in he){
+      heWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in hr){
+      hrWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in ks){
+      ksWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in contestsIn24Hrs){
+      contestsIn24HrsWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in contestsThisWeek){
+      contestsThisWeekWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in contestsThisMonth){
+      contestsThisMonthWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in contestsThisYear){
+      contestsThisYearWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in liveContests){
+      liveContestsWidgets.add(ContestButton(contest: d));
+    }
+    for(var d in allContests){
+      allContestsWidgets.add(ContestButton(contest: d));
+    }
+
     AllContests allContestLists = AllContests(
-        ccContests: cc,
-        cfContests: cf,
-        lcContests: lc,
-        acContests: ac,
-        hrContests: hr,
-        heContests: he,
-        kcContests: kc,
-        contestsIn24Hrs: contestsIn24Hrs,
-        contestsThisWeek: contestsThisWeek,
-        contestsThisMonth: contestsThisMonth,
-        contestsThisYear: contestsThisYear,
-        liveContests: liveContests,
-        allContests: allContests
+        ccContests: ccWidgets,
+        cfContests: cfWidgets,
+        lcContests: lcWidgets,
+        acContests: acWidgets,
+        hrContests: hrWidgets,
+        heContests: heWidgets,
+        kcContests: ksWidgets,
+        allContestsData: allContests,
+        contestsIn24Hrs: contestsIn24HrsWidgets,
+        contestsThisWeek: contestsThisWeekWidgets,
+        contestsThisMonth: contestsThisMonthWidgets,
+        contestsThisYear: contestsThisYearWidgets,
+        liveContests: liveContestsWidgets,
+        allContests: allContestsWidgets
     );
 
     // for (var d in allContestLists.ccContests!){
@@ -77,9 +129,11 @@ class ContestLoadingController extends GetxController {
 
   Future fetchCodechefContests() async {
     try {
-      var list = codechefContestsFromJson(await Get.find<ApiClient>().fetchCodechefContest());
+      var list = contestsFromJson(await Get.find<ApiClient>().fetchCodechefContest());
 
       for(var d in list){
+        d.site = 'CodeChef';
+
         if(d.startTime!.endsWith(" UTC") || d.startTime!.endsWith(".000Z")){
           d.startTime = d.startTime!.substring(0, 19) + "-0530";
         }
@@ -117,9 +171,11 @@ class ContestLoadingController extends GetxController {
 
   Future fetchCodeforcesContests() async {
     try {
-      var list = codeforcesContestsFromJson(await Get.find<ApiClient>().fetchCodeforcesContest());
+      var list = contestsFromJson(await Get.find<ApiClient>().fetchCodeforcesContest());
       // for loop for data cleaning
       for(var d in list){
+        d.site = 'CodeForces';
+
         if(d.startTime!.endsWith(" UTC") || d.startTime!.endsWith(".000Z")){
           d.startTime = d.startTime!.substring(0, 19) + "-0530";
         }
@@ -157,10 +213,12 @@ class ContestLoadingController extends GetxController {
 
   Future fetchAtcoderContests() async {
     try {
-      var list = atcoderContestsFromJson(await Get.find<ApiClient>().fetchAtcoderContest());
+      var list = contestsFromJson(await Get.find<ApiClient>().fetchAtcoderContest());
       // for loop for data cleaning
 
       for(var d in list){
+        d.site = "AtCoder";
+
         if(d.startTime!.endsWith(" UTC") || d.startTime!.endsWith(".000Z")){
           d.startTime = d.startTime!.substring(0, 19) + "-0530";
         }
@@ -198,10 +256,12 @@ class ContestLoadingController extends GetxController {
 
   Future fetchHackerrankContests() async {
     try {
-      var list = hackerrankContestsFromJson(await Get.find<ApiClient>().fetchHackerRankContest());
+      var list = contestsFromJson(await Get.find<ApiClient>().fetchHackerRankContest());
       // for loop for data cleaning
 
       for(var d in list){
+        d.site = "HackerRank";
+
         if(d.startTime!.endsWith(" UTC") || d.startTime!.endsWith(".000Z")){
           d.startTime = d.startTime!.substring(0, 19) + "-0530";
         }
@@ -239,10 +299,12 @@ class ContestLoadingController extends GetxController {
 
   Future fetchHackerearthContests() async {
     try {
-      var list = hackerearthContestsFromJson(await Get.find<ApiClient>().fetchHackerearthContest());
+      var list = contestsFromJson(await Get.find<ApiClient>().fetchHackerearthContest());
       // for loop for data cleaning
 
       for(var d in list){
+        d.site = "HackerEarth";
+
         if(d.startTime!.endsWith(" UTC") || d.startTime!.endsWith(".000Z")){
           d.startTime = d.startTime!.substring(0, 19) + "-0530";
         }
@@ -280,9 +342,11 @@ class ContestLoadingController extends GetxController {
 
   Future fetchLeetcodeContests() async {
     try {
-      var list = leetCodeContestsFromJson(await Get.find<ApiClient>().fetchLeetCodeContest());
+      var list = contestsFromJson(await Get.find<ApiClient>().fetchLeetCodeContest());
       // for loop for data cleaning
       for(var d in list){
+        d.site = "LeetCode";
+
         if(d.startTime!.endsWith(" UTC") || d.startTime!.endsWith(".000Z")){
           d.startTime = d.startTime!.substring(0, 19) + "-0530";
         }
@@ -320,10 +384,12 @@ class ContestLoadingController extends GetxController {
 
   Future fetchKickstartContests() async {
     try {
-      var list = kickStartContestsFromJson(await Get.find<ApiClient>().fetchKickstartContest());
+      var list = contestsFromJson(await Get.find<ApiClient>().fetchKickstartContest());
       // for loop for data cleaning
 
       for(var d in list){
+        d.site = "Kick Start";
+
         if(d.startTime!.endsWith(" UTC") || d.startTime!.endsWith(".000Z")){
           d.startTime = d.startTime!.substring(0, 19) + "-0530";
         }

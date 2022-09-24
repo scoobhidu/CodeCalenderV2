@@ -29,6 +29,24 @@ class AppDecoration {
           ),
         ],
       );
+  static BoxDecoration get glassMorphDesign => BoxDecoration(
+        color: ColorConstant.whiteA700.withOpacity(0.01),
+        boxShadow: [
+          BoxShadow(
+            color: ColorConstant.gray300Cc,
+            spreadRadius: getHorizontalSize(
+              2.00,
+            ),
+            blurRadius: getHorizontalSize(
+              2.00,
+            ),
+            offset: Offset(
+              4,
+              4,
+            ),
+          ),
+        ],
+      );
   static BoxDecoration get fillGray103 => BoxDecoration(
         color: ColorConstant.gray103,
       );

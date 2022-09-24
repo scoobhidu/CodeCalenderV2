@@ -14,11 +14,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "180471297147-gchooefq2sab58f51r1hq6o0ndtjjsf3.apps.googleusercontent.com",
+          "client_id": "180471297147-87b57ptt16dd059nq74ufohjeif3mftr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.codecalenderv.app",
             "certificate_hash": "a1f1e875dc4bde612b9d77823c438d6a97bcf43e"
+          }
+        },
+        {
+          "client_id": "180471297147-h892os2ru5r00k07acqeiutrihu088qc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codecalenderv.app",
+            "certificate_hash": "7f4007c134dc89e3ff8e156b6ec4ba82a42c6f75"
           }
         },
         {

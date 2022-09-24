@@ -52,7 +52,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                         child: Text(
                           'Sign up',
                           style: AppStyle.txtSoraRegularWhite16.copyWith(
-                            fontSize: 24,
+                            fontSize: 32,
                             fontWeight: FontWeight.w700
                           ),
                         ),
@@ -71,14 +71,14 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                             style: AppStyle.txtSoraMediumWhite14.copyWith(
                               fontWeight: FontWeight.w600,
                               color: ColorConstant.CodeChef,
-                              fontSize: 14
+                              fontSize: 18
                             ),
                           )
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                         child: Container(
-                          height: 40,
+                          height: size.height * 0.06,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100)
                           ),
@@ -98,7 +98,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                 hintText: 'CodeChef Username',
                                 hintStyle: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 11
+                                    fontSize: 14
                                 )
                             ),
                           ),
@@ -111,14 +111,14 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                             style: AppStyle.txtSoraMediumWhite14.copyWith(
                               fontWeight: FontWeight.w600,
                               color: ColorConstant.CodeForces,
-                              fontSize: 14
+                              fontSize: 18
                             ),
                           )
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                         child: Container(
-                          height: 40,
+                          height: size.height * 0.06,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100)
                           ),
@@ -138,7 +138,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                 hintText: 'CodeForces Username',
                                 hintStyle: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 11
+                                    fontSize: 14
                                 )
                             ),
                           ),
@@ -151,14 +151,14 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                             style: AppStyle.txtSoraMediumWhite14.copyWith(
                               fontWeight: FontWeight.w600,
                               color: ColorConstant.LeetCode,
-                              fontSize: 14
+                              fontSize: 18
                             ),
                           )
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                         child: Container(
-                          height: 40,
+                          height: size.height * 0.06,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100)
                           ),
@@ -178,7 +178,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                 hintText: 'LeetCode Username',
                                 hintStyle: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 11
+                                    fontSize: 14
                                 )
                             ),
                           ),
@@ -191,14 +191,14 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                             style: AppStyle.txtSoraMediumWhite14.copyWith(
                               fontWeight: FontWeight.w600,
                               color: ColorConstant.AtCoder,
-                              fontSize: 14
+                              fontSize: 18
                             ),
                           )
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                         child: Container(
-                          height: 40,
+                          height: size.height * 0.06,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100)
                           ),
@@ -218,7 +218,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                 hintText: 'AtCoder Username',
                                 hintStyle: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 11
+                                    fontSize: 14
                                 )
                             ),
                           ),
@@ -231,14 +231,14 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                             style: AppStyle.txtSoraMediumWhite14.copyWith(
                               fontWeight: FontWeight.w600,
                               color: ColorConstant.InterviewBit,
-                              fontSize: 14
+                              fontSize: 18
                             ),
                           )
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                         child: Container(
-                          height: 40,
+                          height: size.height * 0.06,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100)
                         ),
@@ -258,7 +258,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                 hintText: 'InterviewBit Username',
                                 hintStyle: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 11
+                                    fontSize: 14
                                 )
                             ),
                           ),
@@ -271,14 +271,14 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                             style: AppStyle.txtSoraMediumWhite14.copyWith(
                               fontWeight: FontWeight.w600,
                               color: ColorConstant.SPOJ,
-                              fontSize: 14
+                              fontSize: 18
                             ),
                           )
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 25),
                         child: Container(
-                          height: 40,
+                          height: size.height * 0.06,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100)
                           ),
@@ -298,7 +298,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                 hintText: 'SPOJ Username',
                                 hintStyle: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 11
+                                    fontSize: 14
                                 )
                             ),
                           ),
@@ -308,7 +308,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                         child: Center(
                           child: Container(
-                              height: 45,
+                              height: size.height * 0.07,
                               width: size.width,
                               child: ElevatedButton(
                                 focusNode: FocusNode(),
@@ -319,7 +319,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                         borderRadius: BorderRadius.circular(15),
                                       )
                                   ),
-                                  textStyle: MaterialStateProperty.all(TextStyle(fontFamily: 'Sora', fontSize: 12, fontWeight: FontWeight.w600)),
+                                  textStyle: MaterialStateProperty.all(TextStyle(fontFamily: 'Sora', fontSize: 14, fontWeight: FontWeight.w600)),
                                   backgroundColor: MaterialStateProperty.all(ColorConstant.black500),
                                   shadowColor: MaterialStateProperty.all(ColorConstant.black100),
                                   elevation: MaterialStateProperty.all(25),
@@ -337,7 +337,8 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                               'OR',
                               textAlign: TextAlign.center,
                               style: AppStyle.txtSoraRegular11Gray.copyWith(
-                                  fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16
                               ),
                             ),
                           )
@@ -346,7 +347,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                         padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
                         child: Center(
                           child: Container(
-                              height: 45,
+                              height: size.height * 0.07,
                               width: size.width,
                               child: ElevatedButton(
                                 focusNode: FocusNode(),
@@ -355,7 +356,7 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                   )),
-                                  textStyle: MaterialStateProperty.all(TextStyle(fontFamily: 'Sora', fontSize: 12, fontWeight: FontWeight.w600)),
+                                  textStyle: MaterialStateProperty.all(TextStyle(fontFamily: 'Sora', fontSize: 14, fontWeight: FontWeight.w600)),
                                   backgroundColor: MaterialStateProperty.all(ColorConstant.black500),
                                   shadowColor: MaterialStateProperty.all(ColorConstant.black100),
                                   elevation: MaterialStateProperty.all(15),

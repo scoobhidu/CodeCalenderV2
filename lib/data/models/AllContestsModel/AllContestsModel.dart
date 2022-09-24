@@ -1,13 +1,9 @@
-import 'package:codecalenderv2/data/models/atcoderContestsModel/atcoderContestsModel.dart';
-import 'package:codecalenderv2/data/models/codechefContestsModel/codechefContestsModel.dart';
-import 'package:codecalenderv2/data/models/codeforcesContestsModel/codeforcesContestsModel.dart';
-import 'package:codecalenderv2/data/models/hackerearthContestsModel/hackerearthContestsModel.dart';
-import 'package:codecalenderv2/data/models/hackerrankContestsModel/hackerrankContestModel.dart';
-import 'package:codecalenderv2/data/models/kickstartContestsModel/kickstartContestsModel.dart';
-import 'package:codecalenderv2/data/models/leetcodeContestsModel/leetcodeContestsModel.dart';
+import '../../../presentation/mainContestView_Screen/widgets/contestButtons.dart';
+import '../ContestsModel/ContestsModel.dart';
 
 class AllContests {
   AllContests({
+    required this.allContestsData,
     required this.ccContests,
     required this.cfContests,
     required this.lcContests,
@@ -23,17 +19,19 @@ class AllContests {
     required this.allContests,
   });
 
-  List<CodechefContests>? ccContests;
-  List<CodeforcesContests>? cfContests;
-  List<LeetCodeContests>? lcContests;
-  List<AtcoderContests>? acContests;
-  List<HackerrankContests>? hrContests;
-  List<HackerearthContests>? heContests;
-  List<KickStartContests>? kcContests;
-  List? contestsIn24Hrs;
-  List? contestsThisWeek;
-  List? contestsThisMonth;
-  List? contestsThisYear;
-  List? liveContests;
-  List? allContests;
+  List<Contests> allContestsData;
+
+  List<ContestButton>? ccContests;
+  List<ContestButton>? cfContests;
+  List<ContestButton>? lcContests;
+  List<ContestButton>? acContests;
+  List<ContestButton>? hrContests;
+  List<ContestButton>? heContests;
+  List<ContestButton>? kcContests;
+  List<ContestButton>? contestsIn24Hrs;
+  List<ContestButton>? contestsThisWeek;
+  List<ContestButton>? contestsThisMonth;
+  List<ContestButton>? contestsThisYear;
+  List<ContestButton>? liveContests;
+  List<ContestButton>? allContests;
 }

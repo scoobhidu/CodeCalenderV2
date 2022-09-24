@@ -1,6 +1,6 @@
 name: codecalenderv2
 description: A new Flutter project.
-version: 1.0.0+1
+version: 1.0.0+2
 environment: 
   sdk: '>=2.12.0 <3.0.0'
 dependencies:
@@ -20,9 +20,11 @@ dependencies:
   firebase_remote_config: ^2.0.17
   firebase_analytics: ^9.3.4
   google_sign_in: ^5.4.1
+  webview_flutter: ^3.0.4
+  flutter_automation: ^2.0.0
 
 executables:
-  codecalenderv2-v1.0.1
+  codecalenderv2-v1.0.0+2
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
@@ -31,7 +33,8 @@ flutter:
   assets: 
     - assets/
     - assets/images/
-  fonts: 
+    - assets/images/logos/dark/
+  fonts:
     - family: Sora
       fonts: 
         - asset: assets/fonts/soraregular400.ttf

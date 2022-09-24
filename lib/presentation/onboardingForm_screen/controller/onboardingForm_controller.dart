@@ -64,7 +64,7 @@ class OnboardingFormController extends GetxController {
     );
 
     FirebaseFirestore.instance.collection('user')
-        .doc(PrefUtils().getUserGoogleDisplayName())
+        .doc(PrefUtils().getUserGoogleDisplayName().toString())
         .set(user.toJson())
         .then((value) {
             print('${user.toJson()} added');

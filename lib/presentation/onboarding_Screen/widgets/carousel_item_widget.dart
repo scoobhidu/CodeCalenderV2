@@ -57,7 +57,7 @@ class CarouselWidget extends StatelessWidget {
                       child: Text(
                         headingText,
                         textAlign: TextAlign.start,
-                        style: AppStyle.txtSoraBoldW1341.copyWith(fontSize: 15),
+                        style: AppStyle.txtSoraBoldW1341.copyWith(fontSize: 20),
                       ),
                     ),
                     const SizedBox(height: 10,),
@@ -67,7 +67,9 @@ class CarouselWidget extends StatelessWidget {
                         carouselDescription,
                         softWrap: true,
                         textAlign: TextAlign.start,
-                        style: AppStyle.txtSoraMediumGray13,
+                        style: AppStyle.txtSoraMediumGray14.copyWith(
+                          fontSize: 15
+                        ),
                       ),
                     ),
                   ],

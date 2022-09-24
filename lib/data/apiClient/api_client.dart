@@ -6,16 +6,9 @@ import 'package:codecalenderv2/data/models/leetcodeDetailsModel/LeetcodeDetailsM
 import 'package:http/http.dart' as http;
 
 import '../models/InterviewbitDetailsModel/InterviewbitDetailsModel.dart';
-import '../models/atcoderContestsModel/atcoderContestsModel.dart';
 import '../models/atcoderDetailsModel/atcoderDetailsModel.dart';
-import '../models/codechefContestsModel/codechefContestsModel.dart';
 import '../models/codechefDetailsModel/codechefDetailsModel.dart';
-import '../models/codeforcesContestsModel/codeforcesContestsModel.dart';
 import '../models/codeforcesDetailsModel/codeforcesDetailsModel.dart';
-import '../models/hackerearthContestsModel/hackerearthContestsModel.dart';
-import '../models/hackerrankContestsModel/hackerrankContestModel.dart';
-import '../models/kickstartContestsModel/kickstartContestsModel.dart';
-import '../models/leetcodeContestsModel/leetcodeContestsModel.dart';
 import '../models/spojDetailsModel/spojDetailsModel.dart';
 
 class ApiClient extends GetConnect {

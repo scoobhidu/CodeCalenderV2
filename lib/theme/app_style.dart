@@ -424,6 +424,33 @@ class AppStyle {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle txtSoraMediumGray16 = TextStyle(
+    color: ColorConstant.gray300,
+    fontSize: getFontSize(
+      16,
+    ),
+    fontFamily: 'Sora',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtSoraMediumGray18 = TextStyle(
+    color: ColorConstant.gray300,
+    fontSize: getFontSize(
+      18,
+    ),
+    fontFamily: 'Sora',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtSoraMediumGray20 = TextStyle(
+    color: ColorConstant.gray300,
+    fontSize: getFontSize(
+      20,
+    ),
+    fontFamily: 'Sora',
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle txtSoraRegularGray17 = TextStyle(
     color: ColorConstant.gray300,
     fontSize: getFontSize(
