@@ -1,3 +1,4 @@
+import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:codecalenderv2/core/app_export.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/ButtonDetailWidgets.dart';
 import 'package:flutter/material.dart';
@@ -56,14 +57,15 @@ class CustomBottomsheet extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: size.width * 0.15,
-                  child: ContestImage(
-                      platform: contest.site!,
-                      size: 48
-                  )
+                    width: size.width * 0.15,
+                    child: ContestImage(
+                        platform: contest.site!,
+                        size: 48
+                    )
                 )
               ],
-            ), // title and logo
+            ),
+            // title and logo
             Column(
               children: [
                 Row(
@@ -71,7 +73,10 @@ class CustomBottomsheet extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                        DateTime.parse(contest.startTime!).day.toString(),
+                        DateTime
+                            .parse(contest.startTime!)
+                            .day
+                            .toString(),
                         style: AppStyle.txtSoraRegularWhite16.copyWith(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
@@ -80,7 +85,9 @@ class CustomBottomsheet extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
-                          changeToMonth(DateTime.parse(contest.startTime!).month),
+                          changeToMonth(DateTime
+                              .parse(contest.startTime!)
+                              .month),
                           style: AppStyle.txtSoraRegularWhite12.copyWith(
                               fontSize: 14
                           )
@@ -89,24 +96,35 @@ class CustomBottomsheet extends StatelessWidget {
                   ],
                 ),
 
-                changeIntToDay(DateTime.parse(contest.startTime!).weekday).toString()
-                    != changeIntToDay(DateTime.parse(contest.endTime!).weekday).toString() ?
+                changeIntToDay(DateTime
+                    .parse(contest.startTime!)
+                    .weekday).toString()
+                    != changeIntToDay(DateTime
+                    .parse(contest.endTime!)
+                    .weekday).toString() ?
                 Column(
                   children: [
                     Row(
                       children: [
                         Text(
-                          changeIntToDay(DateTime.parse(contest.startTime!).weekday).toString(),
+                          changeIntToDay(DateTime
+                              .parse(contest.startTime!)
+                              .weekday).toString(),
                           style: AppStyle.txtSoraBoldGray1341.copyWith(
-                            fontSize: 15
+                              fontSize: 15
                           ),
                         ),
                         Text(
-                          " ${FormatHrWithAZero(DateTime.parse(contest.startTime!).hour)}:"
-                          "${FormatMinWithAZero(DateTime.parse(contest.startTime!).minute)} "
-                          "${AMorPM(DateTime.parse(contest.startTime!))} to ",
+                          " ${FormatHrWithAZero(DateTime
+                              .parse(contest.startTime!)
+                              .hour)}:"
+                              "${FormatMinWithAZero(DateTime
+                              .parse(contest.startTime!)
+                              .minute)} "
+                              "${AMorPM(DateTime.parse(
+                              contest.startTime!))} to ",
                           style: AppStyle.txtSoraBoldGray1341.copyWith(
-                            fontSize: 15
+                              fontSize: 15
                           ),
                         ),
                       ],
@@ -114,14 +132,20 @@ class CustomBottomsheet extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          changeIntToDay(DateTime.parse(contest.endTime!).weekday).toString(),
+                          changeIntToDay(DateTime
+                              .parse(contest.endTime!)
+                              .weekday).toString(),
                           style: AppStyle.txtSoraBoldGray1341.copyWith(
                               fontSize: 15
                           ),
                         ),
                         Text(
-                          " ${FormatHrWithAZero(DateTime.parse(contest.endTime!).hour)}:"
-                              "${FormatMinWithAZero(DateTime.parse(contest.endTime!).minute)} "
+                          " ${FormatHrWithAZero(DateTime
+                              .parse(contest.endTime!)
+                              .hour)}:"
+                              "${FormatMinWithAZero(DateTime
+                              .parse(contest.endTime!)
+                              .minute)} "
                               "${AMorPM(DateTime.parse(contest.endTime!))}",
                           style: AppStyle.txtSoraBoldGray1341.copyWith(
                               fontSize: 15
@@ -134,22 +158,32 @@ class CustomBottomsheet extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      changeIntToDay(DateTime.parse(contest.startTime!).weekday).toString(),
+                      changeIntToDay(DateTime
+                          .parse(contest.startTime!)
+                          .weekday).toString(),
                       style: AppStyle.txtSoraBoldGray1341.copyWith(
                           fontSize: 15
                       ),
                     ),
                     Text(
-                      " ${FormatHrWithAZero(DateTime.parse(contest.startTime!).hour)}:"
-                          "${FormatMinWithAZero(DateTime.parse(contest.startTime!).minute)} "
+                      " ${FormatHrWithAZero(DateTime
+                          .parse(contest.startTime!)
+                          .hour)}:"
+                          "${FormatMinWithAZero(DateTime
+                          .parse(contest.startTime!)
+                          .minute)} "
                           "${AMorPM(DateTime.parse(contest.startTime!))} to ",
                       style: AppStyle.txtSoraBoldGray1341.copyWith(
                           fontSize: 15
                       ),
                     ),
                     Text(
-                      "${FormatHrWithAZero(DateTime.parse(contest.endTime!).hour)}:"
-                          "${FormatMinWithAZero(DateTime.parse(contest.endTime!).minute)} "
+                      "${FormatHrWithAZero(DateTime
+                          .parse(contest.endTime!)
+                          .hour)}:"
+                          "${FormatMinWithAZero(DateTime
+                          .parse(contest.endTime!)
+                          .minute)} "
                           "${AMorPM(DateTime.parse(contest.endTime!))}",
                       style: AppStyle.txtSoraBoldGray1341.copyWith(
                           fontSize: 15
@@ -181,8 +215,10 @@ class CustomBottomsheet extends StatelessWidget {
                               fontSize: 14,
                               fontWeight: FontWeight.w600),
                         ),
-                        backgroundColor: MaterialStateProperty.all(ColorConstant.whiteA700.withOpacity(0.15)),
-                        shadowColor: MaterialStateProperty.all(ColorConstant.black100),
+                        backgroundColor: MaterialStateProperty.all(
+                            ColorConstant.whiteA700.withOpacity(0.15)),
+                        shadowColor: MaterialStateProperty.all(
+                            ColorConstant.black100),
                         elevation: MaterialStateProperty.all(25),
                       ),
                       child: Text('Register'),
@@ -194,7 +230,7 @@ class CustomBottomsheet extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 10),
                     child: ElevatedButton(
                       focusNode: FocusNode(),
-                      onPressed: (){},
+                      onPressed: createCalenderEvent,
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
@@ -207,8 +243,10 @@ class CustomBottomsheet extends StatelessWidget {
                               fontSize: 14,
                               fontWeight: FontWeight.w600),
                         ),
-                        backgroundColor: MaterialStateProperty.all(ColorConstant.whiteA700.withOpacity(0.15)),
-                        shadowColor: MaterialStateProperty.all(ColorConstant.black100),
+                        backgroundColor: MaterialStateProperty.all(
+                            ColorConstant.whiteA700.withOpacity(0.15)),
+                        shadowColor: MaterialStateProperty.all(
+                            ColorConstant.black100),
                         elevation: MaterialStateProperty.all(25),
                       ),
                       child: Text('Schedule Calender Event'),
@@ -220,7 +258,7 @@ class CustomBottomsheet extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 10),
                     child: ElevatedButton(
                       focusNode: FocusNode(),
-                      onPressed: (){},
+                      onPressed: () {},
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
@@ -233,8 +271,10 @@ class CustomBottomsheet extends StatelessWidget {
                               fontSize: 14,
                               fontWeight: FontWeight.w600),
                         ),
-                        backgroundColor: MaterialStateProperty.all(ColorConstant.whiteA700.withOpacity(0.15)),
-                        shadowColor: MaterialStateProperty.all(ColorConstant.black100),
+                        backgroundColor: MaterialStateProperty.all(
+                            ColorConstant.whiteA700.withOpacity(0.15)),
+                        shadowColor: MaterialStateProperty.all(
+                            ColorConstant.black100),
                         elevation: MaterialStateProperty.all(25),
                       ),
                       child: Text('Push Notification'),
@@ -251,38 +291,39 @@ class CustomBottomsheet extends StatelessWidget {
     );
   }
 
-  RegisterWebView(){
+  RegisterWebView() {
     Get.toNamed(AppRoutes.webViewScreen, arguments: [contest.url]);
   }
 
-  AMorPM(DateTime time){
-    if(time.hour >= 12){
+  AMorPM(DateTime time) {
+    if (time.hour >= 12) {
       return "PM";
     } else {
       return "AM";
     }
   }
 
-  FormatHrWithAZero(int time){
-    if(time < 10){
+  FormatHrWithAZero(int time) {
+    if (time < 10) {
       return '0' + time.toString();
-    } else if(time > 13){
+    } else if (time > 13) {
       time = time % 12;
       return time.toString();
     } else {
       return time.toString();
     }
   }
-  FormatMinWithAZero(int time){
-    if(time < 10){
+
+  FormatMinWithAZero(int time) {
+    if (time < 10) {
       return '0' + time.toString();
-    } else{
+    } else {
       return time.toString();
     }
   }
 
-  changeToMonth(int month){
-    switch(month){
+  changeToMonth(int month) {
+    switch (month) {
       case 1:
         return "Jan";
       case 2:
@@ -310,8 +351,8 @@ class CustomBottomsheet extends StatelessWidget {
     }
   }
 
-  changeIntToDay(int day){
-    switch(day){
+  changeIntToDay(int day) {
+    switch (day) {
       case 1:
         return 'Monday';
       case 2:
@@ -328,8 +369,28 @@ class CustomBottomsheet extends StatelessWidget {
         return 'Sunday';
     }
   }
-}
 
+  void createCalenderEvent() async {
+
+    final Event event = Event(
+      title: contest.name!,
+      description: contest.url!,
+      location: contest.site!,
+      startDate: DateTime.parse(contest.startTime!),
+      endDate: DateTime.parse(contest.endTime!),
+      timeZone: '-0530',
+      iosParams: IOSParams(
+        reminder: Duration(minutes: 10), // on iOS, you can set alarm notification after your event.
+      ),
+      androidParams: AndroidParams(
+        emailInvites: [
+          PrefUtils().getUserGoogleEmail()
+        ], // on Android, you can add invite emails to your event.
+      ),
+    );
+    Add2Calendar.addEvent2Cal(event);
+  }
+}
 //Usage Instruction for Custom Bottomsheet
 
 // Get.bottomSheet(

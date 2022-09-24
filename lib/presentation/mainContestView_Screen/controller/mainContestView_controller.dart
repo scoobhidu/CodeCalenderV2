@@ -28,6 +28,8 @@ class MainContestViewController extends GetxController {
   Rx<bool> searchByPlatform = false.obs;
   Rx<bool> displayByTimeline = true.obs;
 
+  Rx<bool> showPlatforms = false.obs;
+
   Rx<bool> ccSelected = false.obs;
   Rx<bool> cfSelected = false.obs;
   Rx<bool> lcSelected = false.obs;
@@ -45,6 +47,8 @@ class MainContestViewController extends GetxController {
   late RxList allContests = [].obs;
 
   searchContestByName(String str){
+    allContests.value.clear();
+
     allContests.value = contestWidgetLists.allContestsData.where((element) {
       var title = element.name.toString()?.length == 0? '' : element.name?.toLowerCase();
       var query = str.toLowerCase();
@@ -52,7 +56,7 @@ class MainContestViewController extends GetxController {
       return title!.contains(query);
     }).toList();
 
-    allContestsButtons.clear();
+    allContestsButtons.value.clear();
 
     for(var d in allContests.value){
       allContestsButtons.value.add(ContestButton(contest: d));

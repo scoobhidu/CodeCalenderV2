@@ -10,6 +10,8 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>NSCalendarsUsageDescription</key>
+    <string>INSERT_REASON_HERE</string>
 	<key>CFBundleName</key>
 	<string>codecalenderv2</string>
 	<key>CFBundlePackageType</key>

@@ -1,8 +1,10 @@
 import 'dart:ui';
 
+import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/ButtonDetailWidgets.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/buttonGridView.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/textWidgets.dart';
 
+import '../../widgets/custom_platform_button.dart';
 import 'controller/mainContestView_controller.dart';
 import 'package:codecalenderv2/core/app_export.dart';
 import 'package:flutter/material.dart';
@@ -116,23 +118,254 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                               height: size.height * 0.06,
                               width: size.height * 0.06,
                               child: Center(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: ColorConstant.whiteA700.withOpacity(0.08),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  margin: EdgeInsets.all(2),
-                                  child: IconButton(
-                                    icon: Icon(Icons.filter_alt_outlined, color: ColorConstant.whiteA700,),
-                                    onPressed: (){
-                                      print('ez');
-                                    },
+                                child: Obx(() => Container(
+                                    decoration: BoxDecoration(
+                                      color: controller.showPlatforms.value?
+                                            ColorConstant.whiteA700 :
+                                            ColorConstant.whiteA700.withOpacity(0.08),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    margin: EdgeInsets.all(2),
+                                    child: IconButton(
+                                      icon: Icon(Icons.filter_alt_outlined,
+                                          color: controller.showPlatforms.value?
+                                                  ColorConstant.black500 :
+                                                  ColorConstant.whiteA700,
+                                      ),
+                                      onPressed: (){
+                                        controller.showPlatforms.value = !controller.showPlatforms.value;
+
+                                        controller.ccSelected.value = false;
+                                        controller.cfSelected.value = false;
+                                        controller.acSelected.value = false;
+                                        controller.lcSelected.value = false;
+                                        controller.heSelected.value = false;
+                                        controller.hrSelected.value = false;
+                                        controller.kcSelected.value = false;
+
+                                        controller.displayByTimeline.value = true;
+                                        print('ez');
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
                             )
                           ],
                         ),
+                      ),
+                      Obx(
+                        () => controller.showPlatforms.value?
+                        Container(
+                            height: size.height * 0.165,
+                            width: size.width,
+                            margin: EdgeInsets.symmetric(vertical: 15),
+                          child: GridView.count(
+                            crossAxisCount: 5,
+                            children: [
+                          Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  controller.ccSelected.value = !controller.ccSelected.value;
+                                  controller.cfSelected.value = false;
+                                  controller.acSelected.value = false;
+                                  controller.lcSelected.value = false;
+                                  controller.heSelected.value = false;
+                                  controller.hrSelected.value = false;
+                                  controller.kcSelected.value = false;
+
+                                  controller.displayByTimeline.value = !controller.ccSelected.value;
+                                  print("Tapped");
+                                },
+                                child: Container(
+                                    height: size.height * 0.075,
+                                    width: size.width * 0.15,
+                                    padding: EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      color: controller.ccSelected.value? ColorConstant.whiteA700 : ColorConstant.whiteA700.withOpacity(0.1),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Center(
+                                      child: ContestImage(platform: 'CodeChef', size: 25,),
+                                    )
+                                  ),
+                                )
+                              ),
+                          Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  controller.ccSelected.value = false;
+                                  controller.cfSelected.value = !controller.cfSelected.value;
+                                  controller.acSelected.value = false;
+                                  controller.lcSelected.value = false;
+                                  controller.heSelected.value = false;
+                                  controller.hrSelected.value = false;
+                                  controller.kcSelected.value = false;
+
+                                  controller.displayByTimeline.value = !controller.cfSelected.value;
+                                  print("Tapped");
+                                  },
+                                  child: Container(
+                                      height: size.height * 0.075,
+                                      width: size.width * 0.15,
+                                      padding: EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: controller.cfSelected.value? ColorConstant.whiteA700 : ColorConstant.whiteA700.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child: ContestImage(platform: 'CodeForces', size: 25,),
+                                      )
+                                  ),
+                                )
+                              ),
+                          Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  controller.ccSelected.value = false;
+                                  controller.cfSelected.value = false;
+                                  controller.lcSelected.value = !controller.lcSelected.value;
+                                  controller.acSelected.value = false;
+                                  controller.heSelected.value = false;
+                                  controller.hrSelected.value = false;
+                                  controller.kcSelected.value = false;
+
+                                  controller.displayByTimeline.value = !controller.lcSelected.value;
+                                  print("Tapped");
+                                  },
+                                  child: Container(
+                                      height: size.height * 0.075,
+                                      width: size.width * 0.15,
+                                      padding: EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: controller.lcSelected.value? ColorConstant.whiteA700 : ColorConstant.whiteA700.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child: ContestImage(platform: 'LeetCode', size: 25,),
+                                      )
+                                  ),
+                                )
+                              ),
+                          Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  controller.ccSelected.value = false;
+                                  controller.cfSelected.value = false;
+                                  controller.lcSelected.value = false;
+                                  controller.acSelected.value = !controller.acSelected.value;
+                                  controller.heSelected.value = false;
+                                  controller.hrSelected.value = false;
+                                  controller.kcSelected.value = false;
+
+                                  controller.displayByTimeline.value = !controller.acSelected.value;
+                                  print("Tapped");
+                                  },
+                                  child: Container(
+                                      height: size.height * 0.075,
+                                      width: size.width * 0.15,
+                                      padding: EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: controller.acSelected.value? ColorConstant.whiteA700 : ColorConstant.whiteA700.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child: ContestImage(platform: 'AtCoder', size: 25,),
+                                      )
+                                  ),
+                                )
+                              ),
+                          Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  controller.ccSelected.value = false;
+                                  controller.cfSelected.value = false;
+                                  controller.lcSelected.value = false;
+                                  controller.acSelected.value = false;
+                                  controller.heSelected.value = !controller.heSelected.value;
+                                  controller.hrSelected.value = false;
+                                  controller.kcSelected.value = false;
+
+                                  controller.displayByTimeline.value = !controller.heSelected.value;
+                                  print("Tapped");
+                                  },
+                                  child: Container(
+                                      height: size.height * 0.075,
+                                      width: size.width * 0.15,
+                                      padding: EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: controller.heSelected.value? ColorConstant.whiteA700 : ColorConstant.whiteA700.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child:  Container(
+                                          child: Image.asset(
+                                            controller.heSelected.value?
+                                            'assets/images/logos/light/HackerEarthLight.png'
+                                            : 'assets/images/logos/dark/HackerEarth.png', width: 25, height: 25,),
+                                        ),
+                                      )
+                                  ),
+                                )
+                              ),
+                          Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  controller.ccSelected.value = false;
+                                  controller.cfSelected.value = false;
+                                  controller.lcSelected.value = false;
+                                  controller.acSelected.value = false;
+                                  controller.heSelected.value = false;
+                                  controller.hrSelected.value = !controller.hrSelected.value;
+                                  controller.kcSelected.value = false;
+
+                                  controller.displayByTimeline.value = !controller.hrSelected.value;
+                                  print("Tapped");
+                                  },
+                                  child: Container(
+                                      height: size.height * 0.075,
+                                      width: size.width * 0.15,
+                                      padding: EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: controller.hrSelected.value? ColorConstant.whiteA700 : ColorConstant.whiteA700.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child: ContestImage(platform: 'HackerRank', size: 25,),
+                                      )
+                                  ),
+                                )
+                              ),
+                          Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  controller.ccSelected.value = false;
+                                  controller.cfSelected.value = false;
+                                  controller.lcSelected.value = false;
+                                  controller.acSelected.value = false;
+                                  controller.heSelected.value = false;
+                                  controller.hrSelected.value = false;
+                                  controller.kcSelected.value = !controller.kcSelected.value;
+                                  controller.displayByTimeline.value = !controller.kcSelected.value;
+                                  print("Tapped");
+                                  },
+                                  child: Container(
+                                      height: size.height * 0.075,
+                                      width: size.width * 0.15,
+                                      padding: EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: controller.kcSelected.value? ColorConstant.whiteA700 : ColorConstant.whiteA700.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                        child: ContestImage(platform: 'Kick Start', size: 25,),
+                                      )
+                                  ),
+                                )
+                              ),
+                            ],
+                          ),
+                        ) : SizedBox(height: 0, width: 0,)
                       ),
                       Obx(() {
                         if (controller.displayByTimeline.value) {
