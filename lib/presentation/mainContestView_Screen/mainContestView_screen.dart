@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/ButtonDetailWidgets.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/buttonGridView.dart';
+import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/noContestsWidget.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/textWidgets.dart';
 
 import '../../widgets/custom_platform_button.dart';
@@ -377,6 +378,8 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                                 LabelHeading(h1: "Contests | ",
                                   h2: "In 24 Hrs",
                                   color: Colors.yellowAccent,),
+                                controller.contestWidgetLists.contestsIn24Hrs?.length == 0?
+                                no_contests_widget() :
                                 ButtonGridView(
                                     contestButtons: controller
                                         .contestWidgetLists
@@ -384,6 +387,8 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                                 LabelHeading(h1: "Contests | ",
                                   h2: "This Week",
                                   color: Colors.yellowAccent,),
+                                controller.contestWidgetLists.contestsThisWeek?.length == 0?
+                                no_contests_widget() :
                                 ButtonGridView(
                                     contestButtons: controller
                                         .contestWidgetLists
@@ -391,6 +396,8 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                                 LabelHeading(h1: "Contests | ",
                                   h2: "This Month",
                                   color: Colors.yellowAccent,),
+                                controller.contestWidgetLists.contestsThisMonth?.length == 0?
+                                no_contests_widget() :
                                 ButtonGridView(
                                     contestButtons: controller
                                         .contestWidgetLists
@@ -398,6 +405,8 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                                 LabelHeading(h1: "Contests | ",
                                   h2: "This Year",
                                   color: Colors.yellowAccent,),
+                                controller.contestWidgetLists.contestsThisYear?.length == 0?
+                                no_contests_widget() :
                                 ButtonGridView(
                                     contestButtons: controller
                                         .contestWidgetLists
@@ -405,6 +414,8 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                                 LabelHeading(h1: "Contests | ",
                                   h2: "Live",
                                   color: Colors.greenAccent,),
+                                controller.contestWidgetLists.liveContests?.length == 0?
+                                no_contests_widget() :
                                 ButtonGridView(
                                     contestButtons: controller
                                         .contestWidgetLists
@@ -416,20 +427,15 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                           return Obx(
                             () {
                               if(controller.allContests.value.length == 0){
-                                return Container(
-                                  child: Center(
-                                    child: Text('No contests to show!', style: TextStyle(
-                                        color: Colors.white60,
-                                        fontSize: 16
-                                      ),
-                                    ),
-                                  ),
+                                return no_contests_widget();
+                              } else {
+                                return Obx(() =>
+                                    ButtonGridView(
+                                        contestButtons: controller
+                                            .allContestsButtons.value
+                                    )
                                 );
                               }
-                              return Obx(() => ButtonGridView(
-                                  contestButtons: controller.allContestsButtons.value
-                                )
-                              );
                             }
                           );
                         } else {

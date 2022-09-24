@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:codecalenderv2/core/utils/progress_dialog_utils.dart';
 import 'package:codecalenderv2/data/models/AllContestsModel/AllContestsModel.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/contestButtons.dart';
 
@@ -22,6 +23,7 @@ class ContestLoadingController extends GetxController {
 
   void onInit() async {
     super.onInit();
+
     List<Contests> cc = await fetchCodechefContests();
     List<Contests> cf = await fetchCodeforcesContests();
     List<Contests> lc = await fetchLeetcodeContests();

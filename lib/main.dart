@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:codecalenderv2/data/models/GoogleSigninObjectModel/googleSignInObjectModel.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -5,6 +7,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'core/app_export.dart';
 
@@ -35,15 +39,26 @@ Future<void> main() async {
 
   Get.put(GoogleSignInObjectModel(object: googleSignIn), tag: 'googleSignInObject');
 
+  final Directory directory = await getApplicationDocumentsDirectory();
+
+  Hive.init(directory.path);
+  var state = await Hive.openBox('currentState');
+
+  String? logState = state.get('loggedState');
+  print(logState);
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
   Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
-  runApp(MyApp());
+  runApp(MyApp(loggedState: logState,));
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  String? loggedState;
+  MyApp({required this.loggedState});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -53,7 +68,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: Locale('en', 'US'),
       title: 'codecalenderv2',
       initialBinding: InitialBindings(),
-      initialRoute: AppRoutes.onboardingScreen,
+      initialRoute: loggedState == null || loggedState == 'false'? AppRoutes.onboardingScreen : AppRoutes.contestLoadingScreen,
       getPages: AppRoutes.pages,
     );
   }

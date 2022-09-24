@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:hive/hive.dart';
 
 import '../../../data/models/GoogleSigninObjectModel/googleSignInObjectModel.dart';
 import '../../../data/models/platformUserNameModels/platformUsernameModel.dart';
@@ -66,7 +67,10 @@ class OnboardingFormController extends GetxController {
     FirebaseFirestore.instance.collection('user')
         .doc(PrefUtils().getUserGoogleDisplayName().toString())
         .set(user.toJson())
-        .then((value) {
+        .then((value) async {
+            var state = await Hive.openBox('currentState');
+            state.put('loggedState', 'true');
+
             print('${user.toJson()} added');
             onTapBtnProceed();
           }
