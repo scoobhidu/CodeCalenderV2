@@ -28,6 +28,7 @@ class ContestButton extends StatelessWidget {
           child: Container(
             height: size.height * 0.2,
             width: size.width * 0.4,
+            margin: EdgeInsets.symmetric(vertical: 7),
             decoration: BoxDecoration(
               color: ColorConstant.whiteA700.withOpacity(0.1),
               borderRadius: BorderRadius.circular(25),

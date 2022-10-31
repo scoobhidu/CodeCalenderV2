@@ -4,26 +4,37 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80539c07-5e27-4ccc-9c2d-81b3b9a3f6ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" afterDir="false" />
+    <list default="true" id="bf0b259c-3596-449a-89c2-90322cb2750e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/dashboard_Screen/binding/dashboard_binding.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/dashboard_Screen/controller/dashboard_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/dashboard_Screen/dashboard_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/dashboard_Screen/models/dashboard_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/dashboard_Screen/widgets/block1.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/dashboard_Screen/widgets/dashboard_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/statsLoading_Screen/binding/statsLoading_binding.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/statsLoading_Screen/controller/statsLoading_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/statsLoading_Screen/models/statsLoading_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/statsLoading_Screen/statsLoading_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/presentation/statsLoading_Screen/widgets/statsLoading_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.aab" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.aab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/data/apiClient/api_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/data/apiClient/api_client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/data/models/codechefDetailsModel/codechefDetailsModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/data/models/codechefDetailsModel/codechefDetailsModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/data/models/codeforcesDetailsModel/codeforcesDetailsModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/data/models/codeforcesDetailsModel/codeforcesDetailsModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/presentation/mainContestView_Screen/mainContestView_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/presentation/mainContestView_Screen/mainContestView_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/presentation/mainContestView_Screen/widgets/contestButtons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/presentation/mainContestView_Screen/widgets/contestButtons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/routes/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/routes/app_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-964580684700060-n1qpMP._adb-tls-connect._tcp]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[964580684700060]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -31,14 +42,16 @@
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="C:\Users\RAJAT 1\Desktop\Flutter Projects\codecalenderv2-v1.0.1\android\app\CodeCalender.jks" />
+    <option name="KEY_STORE_PATH" value="C:\Users\RAJAT 1\Desktop\Flutter Projects\codecalenderv2\android\app\CodeCalender.jks" />
     <option name="KEY_ALIAS" value="CoodeCalender" />
-    <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2FDqCuuAXCuoZyiV1TIrdhzbLdN" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FDwDG3WA3I7EqFnJchiGhdpqC4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,7 +59,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="BundleExportedModule" value="android.app" />
-    <property name="ExportApk.ApkPath" value="C:\Users\RAJAT 1\Desktop\Flutter Projects\codecalenderv2-v1.0.1\android\app" />
+    <property name="ExportApk.ApkPath" value="C:\Users\RAJAT 1\Desktop\Flutter Projects\codecalenderv2\android\app" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -120,12 +133,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="80539c07-5e27-4ccc-9c2d-81b3b9a3f6ad" name="Changes" comment="" />
-      <created>1664036877745</created>
+      <changelist id="bf0b259c-3596-449a-89c2-90322cb2750e" name="Changes" comment="" />
+      <created>1664039840523</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1664036877745</updated>
+      <updated>1664039840523</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:io.grpc:grpc-api" />
   </component>
 </project>

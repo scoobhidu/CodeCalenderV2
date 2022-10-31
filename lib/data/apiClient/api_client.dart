@@ -1,15 +1,8 @@
 import 'dart:convert';
 
 import 'package:codecalenderv2/core/app_export.dart';
-import 'package:codecalenderv2/data/models/leetcodeDetailsModel/LeetcodeDetailsModel.dart';
 
 import 'package:http/http.dart' as http;
-
-import '../models/InterviewbitDetailsModel/InterviewbitDetailsModel.dart';
-import '../models/atcoderDetailsModel/atcoderDetailsModel.dart';
-import '../models/codechefDetailsModel/codechefDetailsModel.dart';
-import '../models/codeforcesDetailsModel/codeforcesDetailsModel.dart';
-import '../models/spojDetailsModel/spojDetailsModel.dart';
 
 class ApiClient extends GetConnect {
   var KontestURL = "https://kontests.net/api/v1";
@@ -170,6 +163,7 @@ class ApiClient extends GetConnect {
       throw Exception("Error fetching LeetCode Contests");
     }
   }
+
   Future fetchKickstartContest() async {
     final http.Response response = await http.get(
       Uri.parse('$KontestURL/kick_start'),
@@ -194,7 +188,7 @@ class ApiClient extends GetConnect {
     if (response.statusCode == 200) {
       print("Fetched Codechef Progress");
       print(jsonDecode(response.body));
-      return response.body;
+      return jsonDecode(response.body);
     } else {
       throw Exception("Error fetching CodeChef Progress");
     }
@@ -208,7 +202,7 @@ class ApiClient extends GetConnect {
     if (response.statusCode == 200) {
       print("Fetched CodeForces Progress");
       print(jsonDecode(response.body));
-      return response.body;
+      return jsonDecode(response.body);
     } else {
       throw Exception("Error fetching Codeforces Progress");
     }
@@ -221,8 +215,8 @@ class ApiClient extends GetConnect {
 
     if (response.statusCode == 200) {
       print("Fetched Leetcode Progress");
-      print(jsonDecode(response.body));
-      return response.body;
+      print (jsonDecode(response.body));
+      return jsonDecode(response.body);
     } else {
       throw Exception("Error fetching Leetcode Progress");
     }
@@ -236,7 +230,7 @@ class ApiClient extends GetConnect {
     if (response.statusCode == 200) {
       print("Fetched InterviewBit Progress");
       print(jsonDecode(response.body));
-      return response.body;
+      return jsonDecode(response.body);
     } else {
       throw Exception("Error fetching InterviewBit Progress");
     }
@@ -249,7 +243,7 @@ class ApiClient extends GetConnect {
     if (response.statusCode == 200) {
       print("Fetched SPOJ Progress");
       print(jsonDecode(response.body));
-      return response.body;
+      return jsonDecode(response.body);
     } else {
       throw Exception("Error fetching SPOJ Progress");
     }
@@ -262,7 +256,7 @@ class ApiClient extends GetConnect {
     if (response.statusCode == 200) {
       print("Fetched Atcoder Progress");
       print(jsonDecode(response.body));
-      return response.body;
+      return jsonDecode(response.body);
     } else {
       throw Exception("Error fetching Atcoder Progress");
     }

@@ -16,17 +16,30 @@ class CodeForcesDetails {
   late final int max_rating;
   late final String rank;
   late final String max_rank;
-  late final List<Contests> contests;
+  late final List<ContestsParticipated> contests;
 
   CodeForcesDetails.fromJson(Map<String, dynamic> json){
     status = json['status'];
     username = json['username'];
     platform = json['platform'];
-    rating = json['rating'];
-    max_rating = json['max rating'];
+    if(json['rating'] != "Unrated"){
+      rating = json['rating'];
+    } else {
+      rating = -1;
+    }
+    if(json['max rating'] != "Unrated"){
+      max_rating = json['max rating'];
+    } else {
+      max_rating = -1;
+    }
     rank = json['rank'];
     max_rank = json['max rank'];
-    contests = List.from(json['contests']).map((e)=>Contests.fromJson(e)).toList();
+    if(json['contests'].isEmpty()){
+      contests = [];
+    } else {
+      contests = List.from(json['contests']).map((e)=>ContestsParticipated.fromJson(e)).toList();
+    }
+
   }
 
   Map<String, dynamic> toJson() {
@@ -43,8 +56,8 @@ class CodeForcesDetails {
   }
 }
 
-class Contests {
-  Contests({
+class ContestsParticipated {
+  ContestsParticipated({
     required this.Contest,
     required this.Rank,
     required this.Solved,
@@ -57,7 +70,7 @@ class Contests {
   late final String Rating_Change;
   late final String New_Rating;
 
-  Contests.fromJson(Map<String, dynamic> json){
+  ContestsParticipated.fromJson(Map<String, dynamic> json){
     Contest = json['Contest'];
     Rank = json['Rank'];
     Solved = json['Solved'];

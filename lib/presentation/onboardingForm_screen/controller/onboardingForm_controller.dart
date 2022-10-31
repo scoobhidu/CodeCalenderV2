@@ -47,11 +47,12 @@ class OnboardingFormController extends GetxController {
         if(userDetails.photoUrl != null) {
           PrefUtils().setUserGooglePhotoURL(userDetails.photoUrl!);
         }
+        addPlatformUsernameToFirestore();
       }
     } catch (err){
       print(err);
+      Get.snackbar("", err.toString());
     }
-    addPlatformUsernameToFirestore();
   }
 
   addPlatformUsernameToFirestore() async {
@@ -65,7 +66,7 @@ class OnboardingFormController extends GetxController {
     );
 
     FirebaseFirestore.instance.collection('user')
-        .doc(PrefUtils().getUserGoogleDisplayName().toString())
+        .doc(PrefUtils().getUserGoogleEmail().toString())
         .set(user.toJson())
         .then((value) async {
             var state = await Hive.openBox('currentState');

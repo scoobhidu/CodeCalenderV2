@@ -1,11 +1,12 @@
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/ButtonDetailWidgets.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/buttonGridView.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/noContestsWidget.dart';
 import 'package:codecalenderv2/presentation/mainContestView_Screen/widgets/textWidgets.dart';
 
-import '../../widgets/custom_platform_button.dart';
+import '../../data/models/platformUserNameModels/platformUsernameModel.dart';
 import 'controller/mainContestView_controller.dart';
 import 'package:codecalenderv2/core/app_export.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +48,7 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      IconButton(onPressed: onTapGoToDashboard, icon: Icon(Icons.person)),
                       Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: Row(
@@ -477,5 +479,20 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                      ]),
                    ),
     ))))));
+  }
+  Future<void> onTapGoToDashboard() async {
+    var platformUsernames = FirebaseFirestore.instance.collection('user').doc(PrefUtils().getUserGoogleDisplayName());
+
+    // Get docs from DocumentReference and then send that map to statsLoading screen
+    try{
+      platformUsernames.get().then((doc) async {
+        Get.toNamed(AppRoutes.statsLoadingScreen, arguments: await doc.data()!);
+      }, onError: (e) {
+        throw (e);
+      });
+    } catch(e) {
+      print(e);
+    }
+
   }
 }

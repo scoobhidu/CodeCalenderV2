@@ -583,4 +583,37 @@ class AppStyle {
     fontFamily: 'Sora',
     fontWeight: FontWeight.w400,
   );
+
+  static TextStyle getTxtSoraMedium16(Color color){
+    return TextStyle(
+      color: color,
+      fontSize: getFontSize(
+        16,
+      ),
+      fontFamily: 'Sora',
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle getTxtSoraRegular14(Color color){
+    return TextStyle(
+      color: color,
+      fontSize: getFontSize(
+        14,
+      ),
+      fontFamily: 'Sora',
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle getTxtSoraBold14(Color color){
+    return TextStyle(
+      color: color,
+      fontSize: getFontSize(
+        14,
+      ),
+      fontFamily: 'Sora',
+      fontWeight: FontWeight.w700,
+    );
+  }
 }
