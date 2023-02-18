@@ -195,35 +195,35 @@ class OnboardingFormScreen extends GetWidget<OnboardingFormController> {
                             ),
                           )
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                        child: Container(
-                          height: size.height * 0.06,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100)
-                          ),
-                          child: TextFormField(
-                            autocorrect: false,
-                            textInputAction: TextInputAction.done,
-                            controller: controller.onboardingAtCoderController,
-                            style: AppStyle.txtSoraMediumGray13,
-                            decoration: InputDecoration(
-                                filled: true,
-                                fillColor: ColorConstant.whiteA700.withOpacity(0.08),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(100)
-                                ),
-                                contentPadding: EdgeInsets.only(left: 15),
-                                hintText: 'AtCoder Username',
-                                hintStyle: TextStyle(
-                                    color: Colors.white60,
-                                    fontSize: 14
-                                )
-                            ),
-                          ),
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                      //   child: Container(
+                      //     height: size.height * 0.06,
+                      //     decoration: BoxDecoration(
+                      //         borderRadius: BorderRadius.circular(100)
+                      //     ),
+                      //     child: TextFormField(
+                      //       autocorrect: false,
+                      //       textInputAction: TextInputAction.done,
+                      //       controller: controller.onboardingAtCoderController,
+                      //       style: AppStyle.txtSoraMediumGray13,
+                      //       decoration: InputDecoration(
+                      //           filled: true,
+                      //           fillColor: ColorConstant.whiteA700.withOpacity(0.08),
+                      //           border: OutlineInputBorder(
+                      //               borderSide: BorderSide.none,
+                      //               borderRadius: BorderRadius.circular(100)
+                      //           ),
+                      //           contentPadding: EdgeInsets.only(left: 15),
+                      //           hintText: 'AtCoder Username',
+                      //           hintStyle: TextStyle(
+                      //               color: Colors.white60,
+                      //               fontSize: 14
+                      //           )
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       Padding(
                         padding: EdgeInsets.only(top: 35, left: 20, right: 20),
                           child: Text(

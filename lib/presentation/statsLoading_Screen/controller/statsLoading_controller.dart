@@ -18,7 +18,7 @@ class StatsLoadingController extends GetxController {
 
     print(myData.codechef);
     print(myData.codeforces);
-    print(myData.atCoder);
+    // print(myData.atCoder);
     print(myData.leetcode);
     print(myData.spoj);
     print(myData.interviewBit);
@@ -43,11 +43,11 @@ class StatsLoadingController extends GetxController {
       userAvailableSites.add({"available": 'No'});
     }
 
-    if(myData.atCoder != '') {
-      userAvailableSites.add(await fetchAtcoderProgress());
-    } else {
-      userAvailableSites.add({"available": 'No'});
-    }
+    // if(myData.atCoder != '') {
+    //   userAvailableSites.add(await fetchAtcoderProgress());
+    // } else {
+    //   userAvailableSites.add({"available": 'No'});
+    // }
 
     if(myData.spoj != '') {
       userAvailableSites.add(await fetchSPOJProgress());
@@ -100,14 +100,14 @@ class StatsLoadingController extends GetxController {
     }
   }
 
-  Future fetchAtcoderProgress() async {
-    try {
-      var list = await Get.find<ApiClient>().fetchAtcoderProgress(myData.atCoder);
-      return list;
-    } catch (e) {
-      print(e);
-    }
-  }
+  // Future fetchAtcoderProgress() async {
+  //   try {
+  //     var list = await Get.find<ApiClient>().fetchAtcoderProgress(myData.atCoder);
+  //     return list;
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   Future fetchSPOJProgress() async {
     try {

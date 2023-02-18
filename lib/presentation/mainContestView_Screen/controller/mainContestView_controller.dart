@@ -50,7 +50,7 @@ class MainContestViewController extends GetxController {
     allContests.value.clear();
 
     allContests.value = contestWidgetLists.allContestsData.where((element) {
-      var title = element.name.toString()?.length == 0? '' : element.name?.toLowerCase();
+      var title = element.name.toString().length == 0 ? '' : element.name?.toLowerCase();
       var query = str.toLowerCase();
 
       return title!.contains(query);

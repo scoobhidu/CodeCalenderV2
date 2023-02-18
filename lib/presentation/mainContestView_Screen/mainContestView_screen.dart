@@ -48,19 +48,30 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      IconButton(onPressed: onTapGoToDashboard, icon: Icon(Icons.person)),
                       Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           textBaseline: TextBaseline.ideographic,
                           children: [
                             Container(
+                              child: Center(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: ColorConstant.whiteA700.withOpacity(0.08),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  margin: EdgeInsets.all(2),
+                                  child: IconButton(onPressed: onTapGoToDashboard, icon: Icon(Icons.person, color: ColorConstant.whiteA700,)),
+                                ),
+                              ),
+                            ),
+                            Container(
                               height: size.height * 0.08,
-                              width: size.width * 0.7,
+                              width: size.width * 0.6,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100)
+                                borderRadius: BorderRadius.circular(100)
                               ),
                               child: TextFormField(
                                 textInputAction: TextInputAction.done,
@@ -118,8 +129,6 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                             ),
 
                             Container(
-                              height: size.height * 0.06,
-                              width: size.height * 0.06,
                               child: Center(
                                 child: Obx(() => Container(
                                     decoration: BoxDecoration(
@@ -433,8 +442,7 @@ class MainContestViewScreen extends GetWidget<MainContestViewController> {
                               } else {
                                 return Obx(() =>
                                     ButtonGridView(
-                                        contestButtons: controller
-                                            .allContestsButtons.value
+                                        contestButtons: controller.allContestsButtons.value
                                     )
                                 );
                               }

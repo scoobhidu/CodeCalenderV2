@@ -70,7 +70,7 @@ class LeetcodeStats extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomLeft,
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 5, bottom: 5),
+                            padding: const EdgeInsets.only(left: 10, bottom: 5),
                             child: Text(
                               "Solved",
                               style: AppStyle.txtSoraRegular11Gray,
@@ -119,7 +119,7 @@ class LeetcodeStats extends StatelessWidget {
                           child: Align(
                             alignment: Alignment.bottomRight,
                             child: Padding(
-                              padding: const EdgeInsets.only(right: 5, bottom: 5),
+                              padding: const EdgeInsets.only(right: 10, bottom: 5),
                               child: Text(
                                 "Submitted",
                                 style: AppStyle.txtSoraRegular11Gray,

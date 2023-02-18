@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class ApiClient extends GetConnect {
   var KontestURL = "https://kontests.net/api/v1";
-  var CPurl = "https://competitive-coding-api.herokuapp.com/api";
+  var CPurl = "https://flask-production-eddc.up.railway.app/api";
 
   @override
   void onInit() {
@@ -35,51 +35,6 @@ class ApiClient extends GetConnect {
   bool _isSuccessCall(Response response) {
     return response.isOk;
   }
-
-  // Future PANPhotoPutResponse(Function onSuccess,
-  //     Function(dynamic error)? onError,
-  //     reqData) async {
-  //   print("Putting PAN Photo using API");
-  //
-  //   late final Response response;
-  //
-  //   ProgressDialogUtils.showProgressDialog();
-  //   try {
-  //     await isNetworkConnected();
-  //
-  //     print(reqData);
-  //
-  //     response = await httpClient.post(
-  //         '$url/onboarding/v2/signup/user/pan/upload',
-  //         headers: <String, String>{
-  //           "session_id": PrefUtils().getsessionid().toString()
-  //         },
-  //         body: reqData);
-  //
-  //     ProgressDialogUtils.hideProgressDialog();
-  //     print('$url/onboarding/v2/signup/user/pan/upload');
-  //     print(response.statusCode);
-  //     print(response.body);
-  //     print("got PAN Photo response");
-  //
-  //     if (_isSuccessCall(response)) {
-  //       print("Successful Post Request for PAN photo");
-  //       onSuccess();
-  //     } else {
-  //       onError!(
-  //         response.hasError
-  //             ? response.statusText
-  //             : PANUploadResponse
-  //             .fromJson(jsonDecode(response.body))
-  //             .message,
-  //       );
-  //     }
-  //   } catch (error) {
-  //     ProgressDialogUtils.hideProgressDialog();
-  //     onError!(error);
-  //   }
-  // }
-
 
   Future fetchCodechefContest() async {
     final http.Response response = await http.get(
@@ -181,9 +136,15 @@ class ApiClient extends GetConnect {
   // ********* Abhijeet_AR's API for getting User Progress ********** //
 
   Future fetchCodechefProgress(String username) async {
+    print("***");
+    print(username);
+    print("***");
+    print('$CPurl/codechef/$username');
     final http.Response response = await http.get(
       Uri.parse('$CPurl/codechef/$username'),
     );
+
+    print(response.body);
 
     if (response.statusCode == 200) {
       print("Fetched Codechef Progress");

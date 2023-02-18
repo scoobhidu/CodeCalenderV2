@@ -9,12 +9,31 @@ import '../../../core/utils/color_constant.dart';
 
 import '../../../core/utils/math_utils.dart';
 import '../../../data/models/ContestsModel/ContestsModel.dart';
-import '../../../theme/app_decoration.dart';
 
 class ContestButton extends StatelessWidget {
   ContestButton({required this.contest});
 
   Contests contest;
+
+  getColor(String platform){
+    if(platform == "HackerEarth"){
+      return ColorConstant.HackerEarth;
+    } else if(platform == "HackerRank"){
+      return ColorConstant.HackerRank;
+    } else if(platform == "AtCoder"){
+      return ColorConstant.AtCoder;
+    } else if(platform == "LeetCode"){
+      return ColorConstant.LeetCode;
+    } else if(platform == "CodeForces"){
+      return ColorConstant.CodeForces;
+    } else if(platform == "CodeChef"){
+      return ColorConstant.CodeChef;
+    } else if(platform == "Kick Start"){
+      return Colors.blue;
+    } else {
+      return Colors.pinkAccent;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +51,10 @@ class ContestButton extends StatelessWidget {
             decoration: BoxDecoration(
               color: ColorConstant.whiteA700.withOpacity(0.1),
               borderRadius: BorderRadius.circular(25),
+              border: Border.all(
+                color: getColor(contest.site ?? ''),
+                width: 1
+              )
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),

@@ -13,7 +13,7 @@ class OnboardingFormController extends GetxController {
   TextEditingController onboardingCodeChefController = TextEditingController();
   TextEditingController onboardingCodeForcesController = TextEditingController();
   TextEditingController onboardingLeetCodeController = TextEditingController();
-  TextEditingController onboardingAtCoderController = TextEditingController();
+  // TextEditingController onboardingAtCoderController = TextEditingController();
   TextEditingController onboardingSPOJController = TextEditingController();
   TextEditingController onboardingInterviewBitController = TextEditingController();
 
@@ -25,7 +25,7 @@ class OnboardingFormController extends GetxController {
     onboardingCodeChefController.text = '';
     onboardingCodeForcesController.text = '';
     onboardingLeetCodeController.text = '';
-    onboardingAtCoderController.text = '';
+    // onboardingAtCoderController.text = '';
     onboardingInterviewBitController.text = '';
     onboardingSPOJController.text = '';
     super.onInit();
@@ -60,7 +60,7 @@ class OnboardingFormController extends GetxController {
         codechef: onboardingCodeChefController.text.removeAllWhitespace,
         codeforces: onboardingCodeForcesController.text.removeAllWhitespace,
         leetcode: onboardingLeetCodeController.text.removeAllWhitespace,
-        atCoder: onboardingAtCoderController.text.removeAllWhitespace,
+        // atCoder: onboardingAtCoderController.text.removeAllWhitespace,
         interviewBit: onboardingInterviewBitController.text.removeAllWhitespace,
         spoj: onboardingSPOJController.text.removeAllWhitespace
     );
@@ -88,7 +88,7 @@ class OnboardingFormController extends GetxController {
     onboardingCodeChefController.dispose();
     onboardingCodeForcesController.dispose();
     onboardingLeetCodeController.dispose();
-    onboardingAtCoderController.dispose();
+    // onboardingAtCoderController.dispose();
     onboardingInterviewBitController.dispose();
     onboardingSPOJController.dispose();
   }

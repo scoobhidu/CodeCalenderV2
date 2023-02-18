@@ -26,6 +26,7 @@ dependencies:
   hive: ^2.2.3
   tab_indicator_styler: ^2.0.0
   fl_chart: ^0.55.2
+  syncfusion_flutter_charts: ^20.4.50
 
 executables:
   codecalenderv2-v1.0.0+4

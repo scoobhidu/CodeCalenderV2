@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../core/utils/color_constant.dart';
-import '../core/utils/math_utils.dart';
 import '../theme/app_style.dart';
 
 class StatsBasicBox extends StatelessWidget {
@@ -12,6 +11,7 @@ class StatsBasicBox extends StatelessWidget {
     required this.description,
     required this.headingColor,
     required this.descriptionColor,
+    this.emoji,
   });
 
   late double height;
@@ -22,6 +22,8 @@ class StatsBasicBox extends StatelessWidget {
 
   late Color headingColor;
   late Color descriptionColor;
+
+  late Icon? emoji;
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +46,18 @@ class StatsBasicBox extends StatelessWidget {
               softWrap: true,
             ),
             SizedBox(height: 10,),
-            Text(
-              description,
-              textAlign: TextAlign.center,
-              style: AppStyle.getTxtSoraBold14(descriptionColor),
-              softWrap: true,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  description,
+                  textAlign: TextAlign.center,
+                  style: AppStyle.getTxtSoraBold14(descriptionColor),
+                  softWrap: true,
+                ),
+                if(emoji != null)
+                  emoji ?? SizedBox(),
+              ],
             ),
           ],
         ),
